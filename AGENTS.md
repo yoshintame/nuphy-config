@@ -42,6 +42,9 @@ commit the result before editing.
   bound with `MACRO(n)`: a chord `"LCTL+C"` or explicit steps
   `["LCTL down 1", "C down 1", "C up 1", "LCTL up"]` (trailing number: delay
   in ms). Macros are numbered per mode: m1's MACRO(1) and m2's are different.
+- `MACRO(n)` plays once per press. Do not bind `MACRO(n, toggle)` (repeat
+  until pressed again) to modifier chords: stopping it can leave Ctrl held
+  until the keyboard is unplugged. `MACRO(n, hold)` repeats while held.
 - If `apply` or `export` refuses because a previous write did not finish,
   run the `nuphyctl he restore-backup <file>` it names before anything else.
 - To undo a write: `nuphyctl he restore-backup ~/.local/state/nuphyctl/he-<stamp>.bin`
