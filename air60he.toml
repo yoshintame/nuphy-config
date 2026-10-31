@@ -1,4 +1,4 @@
-# nuphyctl he: key actions that differ from the factory matrix, and key travel (mm)
+# nuphyctl he: key actions that differ from the factory matrix, macros, and key travel (mm)
 # apply with: nuphyctl he apply <this file>
 
 [m1.base]
@@ -38,8 +38,8 @@ SPC = "MACRO(3)"  # factory NO
 9 = "CODE(2,0)"
 
 [m1.travel]
-"*" = { actuation = 0.5, trigger = "rapid", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
-ESC = { actuation = 1.5, trigger = "normal" }
+"*" = { trigger = "rapid", actuation = 0.5, press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
+ESC = { trigger = "normal", actuation = 1.5 }
 "1" = { trigger = "normal" }
 "2" = { trigger = "normal" }
 "3" = { trigger = "normal" }
@@ -50,18 +50,18 @@ ESC = { actuation = 1.5, trigger = "normal" }
 "8" = { trigger = "normal" }
 "9" = { trigger = "normal" }
 "0" = { trigger = "normal" }
-MINS = { actuation = 1.5, trigger = "normal" }
-EQL = { actuation = 1.5, trigger = "normal" }
-BSPC = { actuation = 1.5, trigger = "normal" }
-BSLS = { actuation = 1.5, trigger = "normal" }
-ENT = { actuation = 1.5, trigger = "normal" }
-RSFT = { actuation = 1.5, trigger = "normal" }
-LGUI = { actuation = 1.5, trigger = "normal" }
-LALT = { actuation = 1.5, trigger = "normal" }
-RALT = { actuation = 1.5, trigger = "normal" }
-MENU = { actuation = 1.5, trigger = "normal" }
-RCTL = { actuation = 1.5, trigger = "normal" }
-FN = { actuation = 1.5, trigger = "normal" }
+MINS = { trigger = "normal", actuation = 1.5 }
+EQL = { trigger = "normal", actuation = 1.5 }
+BSPC = { trigger = "normal", actuation = 1.5 }
+BSLS = { trigger = "normal", actuation = 1.5 }
+ENT = { trigger = "normal", actuation = 1.5 }
+RSFT = { trigger = "normal", actuation = 1.5 }
+LGUI = { trigger = "normal", actuation = 1.5 }
+LALT = { trigger = "normal", actuation = 1.5 }
+RALT = { trigger = "normal", actuation = 1.5 }
+MENU = { trigger = "normal", actuation = 1.5 }
+RCTL = { trigger = "normal", actuation = 1.5 }
+FN = { trigger = "normal", actuation = 1.5 }
 
 [m2.base]
 "2" = "1"  # factory 2
@@ -85,7 +85,7 @@ FN = "NO"  # factory FN(5)
 FN = "NO"  # factory FN(5)
 
 [m2.travel]
-"*" = { actuation = 1.5, trigger = "normal", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
+"*" = { trigger = "normal", actuation = 1.5, press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
 "1" = { actuation = 0.5 }
 "2" = { actuation = 0.5 }
 "3" = { actuation = 0.5 }
@@ -99,27 +99,27 @@ FN = "NO"  # factory FN(5)
 TAB = { actuation = 0.5 }
 Q = { actuation = 0.5 }
 W = { actuation = 0.5 }
-E = { actuation = 0.5, trigger = "rapid" }
+E = { trigger = "rapid", actuation = 0.5 }
 R = { actuation = 0.5 }
 T = { actuation = 0.8 }
 Y = { actuation = 0.8 }
 U = { actuation = 0.8 }
-I = { actuation = 0.5, trigger = "rapid" }
-A = { actuation = 0.5, trigger = "rapid" }
-S = { actuation = 0.5, trigger = "continuous" }
+I = { trigger = "rapid", actuation = 0.5 }
+A = { trigger = "rapid", actuation = 0.5 }
+S = { trigger = "continuous", actuation = 0.5 }
 D = { actuation = 1, press = 0.02, release = 0.02, upper_deadzone = 0.1 }
-F = { actuation = 0.5, trigger = "continuous" }
+F = { trigger = "continuous", actuation = 0.5 }
 G = { actuation = 1, press = 0.02, release = 0.02, upper_deadzone = 0.1 }
 H = { actuation = 0.8 }
-LSFT = { actuation = 0.5, trigger = "rapid" }
+LSFT = { trigger = "rapid", actuation = 0.5 }
 Z = { actuation = 0.5 }
 X = { actuation = 0.8 }
-C = { actuation = 0.5, trigger = "rapid" }
-V = { actuation = 0.5, trigger = "rapid" }
+C = { trigger = "rapid", actuation = 0.5 }
+V = { trigger = "rapid", actuation = 0.5 }
 B = { actuation = 0.8 }
 M = { actuation = 0.8 }
-LCTL = { actuation = 0.5, trigger = "rapid" }
-SPC = { actuation = 0.5, trigger = "rapid" }
+LCTL = { trigger = "rapid", actuation = 0.5 }
+SPC = { trigger = "rapid", actuation = 0.5 }
 
 [m3.travel]
-"*" = { actuation = 1.5, trigger = "normal", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
+"*" = { trigger = "normal", actuation = 1.5, press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
