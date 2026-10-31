@@ -31,6 +31,9 @@ commit the result before editing.
 - Do not hand-edit raw `0x9…` actions (DKS, Mod-Tap, Toggle, Snap Tap pairs):
   they point into tables nuphyctl does not manage. Change those in NuPhy IO,
   then `export`.
+- Keys holding `FACTORY_RESET` or `FIRMWARE_LOADER` (m1 `fn1` `LBRC` holds
+  factory reset) cannot be reassigned by `apply`: no command writes those
+  actions, so a backup could not put them back. Move them in NuPhy IO first.
 - Modes are `m1`..`m3` (NuPhy IO's M1..M3). Layers are numbered across modes
   exactly as NuPhy IO shows them: `base` is a mode's first layer, then
   `fn1`..`fn3` in m1, `fn5`..`fn7` in m2, `fn9`..`fn11` in m3. `FN(n)` takes
