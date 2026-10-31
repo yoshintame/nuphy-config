@@ -35,7 +35,7 @@ SPC = "MACRO(3)"  # factory NO
 6 = "LCTL+V"
 7 = "LCTL+X"
 8 = ["CODE(2,0) down 1", "CODE(2,0) down 1", "CODE(2,0) up 1", "CODE(2,0) up"]
-9 = "CODE(2,0)"
+9 = ["CODE(2,0) down 1", "CODE(2,0) up"]
 
 [m1.travel]
 "*" = { trigger = "rapid", actuation = 0.5, press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
@@ -81,7 +81,7 @@ H = "G"  # factory H
 J = "H"  # factory J
 FN = "NO"  # factory FN(5)
 
-[m2.fn1]
+[m2.fn5]
 FN = "NO"  # factory FN(5)
 
 [m2.travel]

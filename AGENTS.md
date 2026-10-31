@@ -31,12 +31,15 @@ commit the result before editing.
 - Do not hand-edit raw `0x9…` actions (DKS, Mod-Tap, Toggle, Snap Tap pairs):
   they point into tables nuphyctl does not manage. Change those in NuPhy IO,
   then `export`.
-- Modes are `m1`..`m3` (NuPhy IO's M1..M3), layers `base`, `fn1`..`fn3`.
-  NuPhy IO numbers layers across modes (m2 is FN 4-7), and `[m2.fn5]` is
-  accepted as `[m2.fn1]`. `FN(n)` takes that absolute number.
+- Modes are `m1`..`m3` (NuPhy IO's M1..M3). Layers are numbered across modes
+  exactly as NuPhy IO shows them: `base` is a mode's first layer, then
+  `fn1`..`fn3` in m1, `fn5`..`fn7` in m2, `fn9`..`fn11` in m3. `FN(n)` takes
+  the same absolute number.
 - Macros are `[mN.macros]`, numbered 1..32 like NuPhy IO's MACRO 1..32 and
   bound with `MACRO(n)`: a chord `"LCTL+C"` or explicit steps
   `["LCTL down 1", "C down 1", "C up 1", "LCTL up"]` (trailing number: delay
   in ms). Macros are numbered per mode: m1's MACRO(1) and m2's are different.
+- If `apply` or `export` refuses because a previous write did not finish,
+  run the `nuphyctl he restore-backup <file>` it names before anything else.
 - To undo a write: `nuphyctl he restore-backup ~/.local/state/nuphyctl/he-<stamp>.bin`
   (the path `apply` printed).

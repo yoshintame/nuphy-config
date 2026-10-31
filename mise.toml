@@ -1,5 +1,5 @@
 [tools]
-"cargo:https://github.com/yoshintame/nuphyctl" = "rev:35fa77c"
+"cargo:https://github.com/yoshintame/nuphyctl" = "rev:7697d09"
 
 [tasks.check]
 description = "Validate air60he.toml without the keyboard"
