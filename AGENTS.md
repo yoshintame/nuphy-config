@@ -23,6 +23,12 @@ Karabiner or AutoHotkey.
 If the user changed something in NuPhy IO, `mise run export` first and
 commit the result before editing.
 
+To see every layer of a mode with position names and factory values:
+`nuphyctl he dump --mode m1` (add `--changed` for only what differs).
+Position names, assignable actions and what the keyboard cannot do from this
+file (tap-hold, layer toggles) are listed in the nuphyctl `he` docs and in
+the user's vault guide `knowledge/nuphy-air60he-config.md`.
+
 ## Rules
 
 - Commands that open the keyboard (`diff`, `apply`, `export`, `nuphyctl he …`)
