@@ -1,0 +1,118 @@
+# nuphyctl he: key actions that differ from the factory matrix, and key travel (mm)
+# apply with: nuphyctl he apply <this file>
+
+[m1.base]
+CAPS = "FN(2)"  # factory CAPS
+
+[m1.fn1]
+FN = "NO"  # factory FN(1)
+
+[m1.fn2]
+Q = "MACRO(6)"  # factory NO
+W = "MACRO(4)"  # factory NO
+E = "MACRO(5)"  # factory NO
+U = "BSPC"  # factory NO
+I = "UP"  # factory NO
+O = "DEL"  # factory NO
+A = "MACRO(7)"  # factory NO
+S = "LSFT"  # factory NO
+D = "LCTL"  # factory NO
+F = "MACRO(3)"  # factory NO
+H = "ESC"  # factory NO
+J = "LEFT"  # factory NO
+K = "DOWN"  # factory NO
+L = "RGHT"  # factory NO
+SCLN = "ENT"  # factory NO
+M = "MACRO(0)"  # factory NO
+DOT = "MACRO(1)"  # factory NO
+SPC = "MACRO(2)"  # factory NO
+
+[m1.fn3]
+ESC = "F5"  # factory NO
+
+[m1.travel]
+"*" = { actuation = 0.5, trigger = "rapid", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
+ESC = { actuation = 1.5, trigger = "normal" }
+"1" = { trigger = "normal" }
+"2" = { trigger = "normal" }
+"3" = { trigger = "normal" }
+"4" = { trigger = "normal" }
+"5" = { trigger = "normal" }
+"6" = { trigger = "normal" }
+"7" = { trigger = "normal" }
+"8" = { trigger = "normal" }
+"9" = { trigger = "normal" }
+"0" = { trigger = "normal" }
+MINS = { actuation = 1.5, trigger = "normal" }
+EQL = { actuation = 1.5, trigger = "normal" }
+BSPC = { actuation = 1.5, trigger = "normal" }
+BSLS = { actuation = 1.5, trigger = "normal" }
+ENT = { actuation = 1.5, trigger = "normal" }
+RSFT = { actuation = 1.5, trigger = "normal" }
+LGUI = { actuation = 1.5, trigger = "normal" }
+LALT = { actuation = 1.5, trigger = "normal" }
+RALT = { actuation = 1.5, trigger = "normal" }
+MENU = { actuation = 1.5, trigger = "normal" }
+RCTL = { actuation = 1.5, trigger = "normal" }
+FN = { actuation = 1.5, trigger = "normal" }
+
+[m2.base]
+"2" = "1"  # factory 2
+"3" = "2"  # factory 3
+"4" = "3"  # factory 4
+"5" = "4"  # factory 5
+"6" = "5"  # factory 6
+W = "Q"  # factory W
+E = "W"  # factory E
+R = "E"  # factory R
+T = "R"  # factory T
+CAPS = "LCTL"  # factory CAPS
+A = "LSFT"  # factory A
+S = "0x950020"  # factory S
+F = "0x95011e"  # factory F
+H = "G"  # factory H
+J = "H"  # factory J
+FN = "NO"  # factory FN(5)
+
+[m2.fn1]
+FN = "NO"  # factory FN(5)
+
+[m2.travel]
+"*" = { actuation = 1.5, trigger = "normal", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }
+"1" = { actuation = 0.5 }
+"2" = { actuation = 0.5 }
+"3" = { actuation = 0.5 }
+"4" = { actuation = 0.5 }
+"5" = { actuation = 0.5 }
+"6" = { actuation = 0.5 }
+"7" = { actuation = 0.5 }
+"8" = { actuation = 0.5 }
+"9" = { actuation = 0.5 }
+"0" = { actuation = 0.5 }
+TAB = { actuation = 0.5 }
+Q = { actuation = 0.5 }
+W = { actuation = 0.5 }
+E = { actuation = 0.5, trigger = "rapid" }
+R = { actuation = 0.5 }
+T = { actuation = 0.8 }
+Y = { actuation = 0.8 }
+U = { actuation = 0.8 }
+I = { actuation = 0.5, trigger = "rapid" }
+A = { actuation = 0.5, trigger = "rapid" }
+S = { actuation = 0.5, trigger = "continuous" }
+D = { actuation = 1, press = 0.02, release = 0.02, upper_deadzone = 0.1 }
+F = { actuation = 0.5, trigger = "continuous" }
+G = { actuation = 1, press = 0.02, release = 0.02, upper_deadzone = 0.1 }
+H = { actuation = 0.8 }
+LSFT = { actuation = 0.5, trigger = "rapid" }
+Z = { actuation = 0.5 }
+X = { actuation = 0.8 }
+C = { actuation = 0.5, trigger = "rapid" }
+V = { actuation = 0.5, trigger = "rapid" }
+B = { actuation = 0.8 }
+M = { actuation = 0.8 }
+LCTL = { actuation = 0.5, trigger = "rapid" }
+SPC = { actuation = 0.5, trigger = "rapid" }
+
+[m3.travel]
+"*" = { actuation = 1.5, trigger = "normal", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }

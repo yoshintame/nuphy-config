@@ -1,0 +1,19 @@
+[tools]
+"cargo:https://github.com/yoshintame/nuphyctl" = "rev:cfb1f77"
+
+[tasks.check]
+description = "Validate air60he.toml without the keyboard"
+run = "nuphyctl he check air60he.toml"
+
+[tasks.diff]
+description = "Show what apply would change on the keyboard"
+run = "nuphyctl he apply air60he.toml --dry-run"
+
+[tasks.apply]
+description = "Write air60he.toml to the keyboard (backs up first, verifies by reading back)"
+depends = ["check"]
+run = "nuphyctl he apply air60he.toml"
+
+[tasks.export]
+description = "Replace air60he.toml with what the keyboard holds now"
+run = "nuphyctl he export > air60he.toml.new && mv air60he.toml.new air60he.toml"
