@@ -35,8 +35,20 @@ the user's vault guide `knowledge/nuphy-air60he-config.md`.
   need the agent sandbox off: hidapi cannot reach USB from inside it.
 - Never write while drive.nuphy.io is open.
 - Do not hand-edit raw `0x9…` actions (DKS, Mod-Tap, Toggle, Snap Tap pairs):
-  they point into tables nuphyctl does not manage. Change those in NuPhy IO,
-  then `export`.
+  they point into tables nuphyctl does not manage yet.
+
+## When nuphyctl cannot express a binding
+
+The keyboard can do more than nuphyctl writes (Mod-Tap, DKS, Toggle, Snap
+Tap, mode settings). If a binding needs one of these, extend the fork in the
+same session instead of setting it in NuPhy IO for good: the fork is
+`~/Development/yoshintame/nuphyctl` (module `src/he/`). Reverse the format on
+the free mode m3 (the user sets a sample in NuPhy IO, you read and diff),
+implement it behind the same safety rules (command whitelist, backup,
+read-back, write tests), check on m3 with a restore, push the fork, bump the
+rev in `mise.toml`, then add the binding here. The full procedure is the
+user's vault note `knowledge/nuphyctl-he-extending.md`; never write to the
+keyboard with `nuphyctl raw send`.
 - Keys holding `FACTORY_RESET` or `FIRMWARE_LOADER` (m1 `fn1` `LBRC` holds
   factory reset) cannot be reassigned by `apply`: no command writes those
   actions, so a backup could not put them back. Move them in NuPhy IO first.
