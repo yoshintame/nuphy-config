@@ -8,27 +8,34 @@ CAPS = "FN(2)"  # factory CAPS
 FN = "NO"  # factory FN(1)
 
 [m1.fn2]
-Q = "MACRO(6)"  # factory NO
-W = "MACRO(4)"  # factory NO
-E = "MACRO(5)"  # factory NO
+Q = "MACRO(7)"  # factory NO
+W = "MACRO(5)"  # factory NO
+E = "MACRO(6)"  # factory NO
 U = "BSPC"  # factory NO
 I = "UP"  # factory NO
 O = "DEL"  # factory NO
-A = "MACRO(7)"  # factory NO
+A = "MACRO(8)"  # factory NO
 S = "LSFT"  # factory NO
 D = "LCTL"  # factory NO
-F = "MACRO(3)"  # factory NO
+F = "MACRO(4)"  # factory NO
 H = "ESC"  # factory NO
 J = "LEFT"  # factory NO
 K = "DOWN"  # factory NO
 L = "RGHT"  # factory NO
 SCLN = "ENT"  # factory NO
-M = "MACRO(0)"  # factory NO
-DOT = "MACRO(1)"  # factory NO
-SPC = "MACRO(2)"  # factory NO
+M = "MACRO(1)"  # factory NO
+DOT = "MACRO(2)"  # factory NO
+SPC = "MACRO(3)"  # factory NO
 
-[m1.fn3]
-ESC = "F5"  # factory NO
+[m1.macros]
+1 = ["LCTL down", "Z down", "Z up", "LCTL up"]
+2 = ["LCTL down 1", "LSFT down 1", "Z down 1", "Z up 1", "LSFT up 1", "LCTL up 1"]
+3 = ["LGUI down 1", "SPC down 1", "SPC up 1", "LGUI up 1"]
+5 = "LCTL+C"
+6 = "LCTL+V"
+7 = "LCTL+X"
+8 = ["CODE(2,0) down 1", "CODE(2,0) down 1", "CODE(2,0) up 1", "CODE(2,0) up"]
+9 = "CODE(2,0)"
 
 [m1.travel]
 "*" = { actuation = 0.5, trigger = "rapid", press = 0.01, release = 0.01, upper_deadzone = 0, lower_deadzone = 0 }

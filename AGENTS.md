@@ -1,0 +1,42 @@
+# nuphy-config — agent rules
+
+`air60he.toml` is the source of truth for the NuPhy Air60 HE: key actions,
+per-key travel and macros, written to the keyboard with `nuphyctl he` (pinned
+in `mise.toml`). The keyboard is used mainly on Windows and reaches the Mac
+only through Deskflow, so layout logic lives in the keyboard itself, not in
+Karabiner or AutoHotkey.
+
+## Changing the keyboard
+
+1. Edit `air60he.toml`. Touch only what the request names; the file lists
+   only what differs from factory, plus the full travel table. Deleting a
+   line changes nothing on the keyboard: `apply` touches only listed keys, so
+   to undo a binding set it back to its factory value (the `# factory …`
+   comment, `NO` on an Fn layer, `[]` for a macro), apply, then `export`.
+2. `mise run check` — offline validation. Fix every error before going on.
+3. `mise run diff` — read the planned changes; they must match the request
+   and nothing else.
+4. Ask the user to close drive.nuphy.io, then `mise run apply`. It backs up,
+   writes, reads back and fails unless the keyboard matches.
+5. Commit `air60he.toml`.
+
+If the user changed something in NuPhy IO, `mise run export` first and
+commit the result before editing.
+
+## Rules
+
+- Commands that open the keyboard (`diff`, `apply`, `export`, `nuphyctl he …`)
+  need the agent sandbox off: hidapi cannot reach USB from inside it.
+- Never write while drive.nuphy.io is open.
+- Do not hand-edit raw `0x9…` actions (DKS, Mod-Tap, Toggle, Snap Tap pairs):
+  they point into tables nuphyctl does not manage. Change those in NuPhy IO,
+  then `export`.
+- Modes are `m1`..`m3` (NuPhy IO's M1..M3), layers `base`, `fn1`..`fn3`.
+  NuPhy IO numbers layers across modes (m2 is FN 4-7), and `[m2.fn5]` is
+  accepted as `[m2.fn1]`. `FN(n)` takes that absolute number.
+- Macros are `[mN.macros]`, numbered 1..32 like NuPhy IO's MACRO 1..32 and
+  bound with `MACRO(n)`: a chord `"LCTL+C"` or explicit steps
+  `["LCTL down 1", "C down 1", "C up 1", "LCTL up"]` (trailing number: delay
+  in ms). Macros are numbered per mode: m1's MACRO(1) and m2's are different.
+- To undo a write: `nuphyctl he restore-backup ~/.local/state/nuphyctl/he-<stamp>.bin`
+  (the path `apply` printed).
